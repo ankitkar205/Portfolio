@@ -37,13 +37,14 @@ $(document).ready(function(){
     function send() {
         Email.send({
             Host: "smtp.elasticemail.com",
-            Username: "ankitkarcab205@gmail.com",
-            Password: "3BD3AEB99A74A0FF94505B9EC6EF835D5821",
-            To: 'rikkar627@gmail.com',
-            From: 'rikkar627@gmail.com',
+            Username: "ankitkarsmtp@gmail.com",
+            Password: "528D9E0C9D0B5C9444BAF33304F43487E082",
+            To: 'ankitkar7000@gmail.com',
+            From: 'ankitkarsmtp@gmail.com',
             Subject: document.querySelector(".field input[type='text']").value,
             Body: "Name: " + document.querySelector(".field.name input").value +
                 "<br> Email: " + document.querySelector(".field.email input").value +
+                "<br> Subject: " + document.querySelector(".field.message textarea").value +
                 "<br> Message: " + document.querySelector(".field.textarea textarea").value
         }).then(
             message => alert("Message sent successfully!")
