@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-pVx4ldHo9RfQNZ0CHZ4GlFlq+GVtIm9+3fwOD29RApOd1g08Q2P+3JFE2UN9pC4tvKl+FElP8GeSVH39Cj3TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Include Particles.js -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- Include SMTP.js -->
+</head>
+<body>
+    <header id="header">
+        <div id="particles-js"></div> <!-- Add this div for particles -->
+        <div class="container">
+            <nav>
+                <img src="Img/logo.png" alt="Logo" class="logo">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Hey <span>>Ankit</span> here</h1>
+                <p>Ready to dive in and make things happen</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="sub-title">About Me</h2>
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Img/user.png" alt="Profile">
+                </div>
+                <div class="about-col-2">
+                    <div class="tab-titles">
+                        <div class="tab-links active-link" data-tab="tab1">Skills</div>
+                        <div class="tab-links" data-tab="tab2">Education</div>
+                        <div class="tab-links" data-tab="tab3">Experience</div>
+                    </div>
+                    <div class="tab-contents active-tab" id="tab1">
+                        <ul>
+                            <li>
+                                <b>Programming Language:</b>
+                                🟢 (C), 🟣 (C++), 🔴 (HTML), 🔵 (CSS), 🐍 (Python), ☕ (Java), 💻 (JavaScript)
+                            </li><br>
+                            <li><b>Embedded Systems:</b> Arduino, ESP, STM32</li><br>
+                            <li><b>Creative Software: </b> Adobe Photoshop, Lightroom, Snapseed, Premiere Pro</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="tab2">
+                        <b>Bachelor of Technology (BTech)</b><br><br>
+                        <b>Narula Institute of Technology</b><br><br>
+                        Currently pursuing a degree in Electronics and Computer Science.
+                    </div>
+                    <div class="tab-contents" id="tab3">
+                        <p>Content for Tab 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="sub-title">My Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <a href="https://www.youtube.com/watch?v=Pt1oBkHyFTY" target="_blank">Spoonie</a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="https://www.youtube.com/watch?v=7dg8Mj1fkkQ&t=1s" target="_blank">PlatePal</a>
+                </div>
+                <div class="portfolio-item">Project 3</div>
+                <div class="portfolio-item">Project 4</div>
+                <div class="portfolio-item">Project 5</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div class="container">
+            <h2 class="sub-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-item">Service 1</div>
+                <div class="service-item">Service 2</div>
+                <div class="service-item">Service 3</div>
+                <div class="service-item">Service 4</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="sub-title">Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" id="name" required>
+                <input type="email" placeholder="Your Email" id="email" required>
+                <textarea placeholder="Your Message" rows="4" id="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the form from submitting the default way
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            Email.send({
+                
+                HosSecureToken : "b64c9f29-50d3-4a56-a1ba-6daa8b320296",
+                To : 'ankitkarsmtp205@gmail.com',
+                From : "ankitkarsmtp205@gmail.com",
+ 
+                Subject: `Contact Form Submission from ${name}`,
+                Body: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`,
+            })
+            .then((message) => alert("Email sent successfully!"))
+            .catch((error) => alert("Error sending email: " + error));
+        });
+    </script>
+</body>
+</html>
