@@ -1,101 +1,75 @@
-$(document).ready(function(){
-    $(window).scroll(function(){
-        // Sticky navbar on scroll script
-        if($(this).scrollTop() > 20){
-            $('.navbar').addClass("sticky");
-        } else {
-            $('.navbar').removeClass("sticky");
-        }
-        
-        // Scroll-up button show/hide script
-        if($(this).scrollTop() > 500){
-            $('.scroll-up-btn').addClass("show");
-        } else {
-            $('.scroll-up-btn').removeClass("show");
-        }
-    });
+// Initialize Particles.js
+particlesJS("particles-js", {
+    particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 },
+        },
+        opacity: { value: 0.5, random: false, anim: { enable: false } },
+        size: { value: 5, random: true, anim: { enable: false } },
+        line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+        },
+        move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+        },
+    },
+    interactivity: {
+        detect_on: "canvas",
+        events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
+        },
+        modes: {
+            grab: { distance: 400, line_linked: { opacity: 1 } },
+            bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
+        },
+    },
+    retina_detect: true,
+});
 
-    // Scroll-up button click event
-    $('.scroll-up-btn').click(function(){
-        $('html, body').animate({scrollTop: 0}, 'slow');
-        // Removing smooth scroll on slide-up button click
-        $('html').css("scrollBehavior", "auto");
-    });
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-    // Apply smooth scroll on menu items click
-    $('.navbar .menu li a').click(function(){
-        $('html').css("scrollBehavior", "smooth");
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
+});
 
-    // Toggle menu/navbar script
-    $('.menu-btn').click(function(){
-        $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active");
+// Tab switching functionality
+const tabLinks = document.querySelectorAll(".tab-links");
+const tabContents = document.querySelectorAll(".tab-contents");
+
+tabLinks.forEach((tab) => {
+    tab.addEventListener("click", function () {
+        // Remove active class from all tabs and contents
+        tabLinks.forEach((link) => link.classList.remove("active-link"));
+        tabContents.forEach((content) => content.classList.remove("active-tab"));
+
+        // Add active class to the clicked tab and associated content
+        this.classList.add("active-link");
+        const activeTab = document.getElementById(this.getAttribute("data-tab"));
+        activeTab.classList.add("active-tab");
     });
-
-    //send msg
-    function send() {
-        Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "ankitkarsmtp@gmail.com",
-            Password: "528D9E0C9D0B5C9444BAF33304F43487E082",
-            To: 'ankitkar7000@gmail.com',
-            From: 'ankitkarsmtp@gmail.com',
-            Subject: document.querySelector(".field input[type='text']").value,
-            Body: "Name: " + document.querySelector(".field.name input").value +
-                "<br> Email: " + document.querySelector(".field.email input").value +
-                "<br> Subject: " + document.querySelector(".field.message textarea").value +
-                "<br> Message: " + document.querySelector(".field.textarea textarea").value
-        }).then(
-            message => alert("Message sent successfully!")
-        ).catch(
-            error => alert("Failed to send message. Error: " + error)
-        );
-    }
-    
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent default form submission
-        send(); // Call the send function
-        this.reset(); // Reset the form fields
-    });
-
-    // Typing text animation script
-    var typed = new Typed(".typing", {
-        strings: ["Student", "Designer", "Guitarist", "Developer", "Editor"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
-
-    var typed = new Typed(".typing-2", {
-        strings: ["Student", "Designer", "Guitarist", "Developer", "Editor"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
-
-    // Owl carousel script
-    $('.carousel').owlCarousel({
-        margin: 20,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-            0:{
-                items: 1,
-                nav: false
-            },
-            600:{
-                items: 2,
-                nav: false
-            },
-            1000:{
-                items: 3,
-                nav: false
-            }
-        }
-    });
-
-    
 });
