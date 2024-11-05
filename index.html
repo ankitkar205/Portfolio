@@ -107,26 +107,38 @@
     </section>
 
     <script src="script.js"></script>
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent the form from submitting the default way
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    // Initialize EmailJS with your User ID
+    (function() {
+        emailjs.init("f7_ND6PMR2_fs8WCV"); // Replace with your actual EmailJS User ID
+    })();
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the form from submitting the default way
 
-            Email.send({
-                
-                HosSecureToken : "b64c9f29-50d3-4a56-a1ba-6daa8b320296",
-                To : 'ankitkarsmtp205@gmail.com',
-                From : "ankitkarsmtp205@gmail.com",
- 
-                Subject: `Contact Form Submission from ${name}`,
-                Body: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`,
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Set up the email parameters
+        const emailParams = {
+            from_name: name,
+            from_email: email,
+            message: message
+        };
+
+        // Use EmailJS to send the email
+        emailjs.send("service_jz2n7ce", "template_crxku7i", emailParams)
+            .then((response) => {
+                alert("Email sent successfully!");
+                document.getElementById("contactForm").reset(); // Reset form after sending
             })
-            .then((message) => alert("Email sent successfully!"))
-            .catch((error) => alert("Error sending email: " + error));
-        });
-    </script>
+            .catch((error) => {
+                alert("Error sending email: " + error);
+            });
+    });
+</script>
+
 </body>
 </html>
