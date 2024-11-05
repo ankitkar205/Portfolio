@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-pVx4ldHo9RfQNZ0CHZ4GlFlq+GVtIm9+3fwOD29RApOd1g08Q2P+3JFE2UN9pC4tvKl+FElP8GeSVH39Cj3TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>My Portfolio</title>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Include Particles.js -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- Include SMTP.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Particles.js for background effect -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- SMTP.js for email sending -->
 </head>
 <body>
     <header id="header">
-        <div id="particles-js"></div> <!-- Add this div for particles -->
+        <div id="particles-js"></div> <!-- Particles background -->
         <div class="container">
             <nav>
                 <img src="Img/logo.png" alt="Logo" class="logo">
@@ -44,12 +44,9 @@
                     </div>
                     <div class="tab-contents active-tab" id="tab1">
                         <ul>
-                            <li>
-                                <b>Programming Language:</b>
-                                🟢 (C), 🟣 (C++), 🔴 (HTML), 🔵 (CSS), 🐍 (Python), ☕ (Java), 💻 (JavaScript)
-                            </li><br>
+                            <li><b>Programming Languages:</b> C, C++, HTML, CSS, Python, Java, JavaScript</li><br>
                             <li><b>Embedded Systems:</b> Arduino, ESP, STM32</li><br>
-                            <li><b>Creative Software: </b> Adobe Photoshop, Lightroom, Snapseed, Premiere Pro</li>
+                            <li><b>Creative Software:</b> Adobe Photoshop, Lightroom, Premiere Pro</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="tab2">
@@ -58,7 +55,7 @@
                         Currently pursuing a degree in Electronics and Computer Science.
                     </div>
                     <div class="tab-contents" id="tab3">
-                        <p>Content for Tab 3</p>
+                        <p>Currently expanding my project experience in embedded systems and software development.</p>
                     </div>
                 </div>
             </div>
@@ -86,10 +83,10 @@
         <div class="container">
             <h2 class="sub-title">Services</h2>
             <div class="services-grid">
-                <div class="service-item">Service 1</div>
-                <div class="service-item">Service 2</div>
-                <div class="service-item">Service 3</div>
-                <div class="service-item">Service 4</div>
+                <div class="service-item">Consulting</div>
+                <div class="service-item">Software Development</div>
+                <div class="service-item">Embedded Systems</div>
+                <div class="service-item">Technical Support</div>
             </div>
         </div>
     </section>
@@ -106,39 +103,40 @@
         </div>
     </section>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-    // Initialize EmailJS with your User ID
-    (function() {
-        emailjs.init("f7_ND6PMR2_fs8WCV"); // Replace with your actual EmailJS User ID
-    })();
+    <script>
+        // Initialize EmailJS with your User ID
+        (function() {
+            emailjs.init("f7_ND6PMR2_fs8WCV"); // Replace with your EmailJS User ID
+        })();
 
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent the form from submitting the default way
+        // Contact form submission handling
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
 
-        // Set up the email parameters
-        const emailParams = {
-            from_name: name,
-            from_email: email,
-            message: message
-        };
+            // Email parameters
+            const emailParams = {
+                from_name: name,
+                from_email: email,
+                message: message
+            };
 
-        // Use EmailJS to send the email
-        emailjs.send("service_jz2n7ce", "template_crxku7i", emailParams)
-            .then((response) => {
-                alert("Email sent successfully!");
-                document.getElementById("contactForm").reset(); // Reset form after sending
-            })
-            .catch((error) => {
-                alert("Error sending email: " + error);
-            });
-    });
-</script>
-
+            // Send the email
+            emailjs.send("service_jz2n7ce", "template_crxku7i", emailParams)
+                .then((response) => {
+                    alert("Email sent successfully!");
+                    document.getElementById("contactForm").reset(); // Reset form after sending
+                })
+                .catch((error) => {
+                    alert("Error sending email: " + error);
+                });
+        });
+    </script>
 </body>
 </html>
