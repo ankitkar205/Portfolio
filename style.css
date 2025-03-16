@@ -89,23 +89,34 @@ header {
     box-shadow: var(--card-shadow);
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: 100;  /* Ensure navbar stays on top */
-
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
 }
 
-.logo { /* style for logo*/
+/* --- Logo --- */
+.logo {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: var(--font-weight-bold);
     color: var(--text-color);
+    text-decoration: none;
+    gap: 0.5rem;
 }
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+/* --- Navigation Links --- */
 .nav-links {
     list-style: none;
     display: flex; /* Use Flexbox for horizontal alignment */
@@ -114,21 +125,62 @@ header {
 
 .nav-links a {
     font-weight: var(--font-weight-bold);
-    text-transform: uppercase; /* Optional: uppercase links */
-    letter-spacing: 0.05em;   /* Optional: slight letter spacing */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     padding: 0.5rem 0;
     border-bottom: 2px solid transparent;
-    transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s ease-in-out, color 0.3s;
+    text-decoration: none;
+    color: var(--text-color);
 }
-.nav-links a:hover{
-     border-bottom: 2px solid var(--accent-color);
+
+.nav-links a:hover {
+    border-bottom: 2px solid var(--accent-color);
+    color: var(--accent-color-hover);
+}
+
+/* --- Mobile Navigation Toggle Button --- */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: var(--nav-bg-color);
+        box-shadow: var(--card-shadow);
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
 }
 
 /* --- Sections --- */
 section {
     padding: 4rem 0;
 }
-
 
 /* --- Theme Switcher Button --- */
 .theme-switcher {
@@ -139,26 +191,26 @@ section {
 }
 
 #theme-toggle {
-    background-color: transparent; /* No background */
+    background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 2rem; /* Larger icon */
+    font-size: 2rem;
     color: var(--accent-color);
-    transition: color 0.3s, transform 0.3s;
-    display: flex; /* Use flex for easy icon alignment */
+    transition: color 0.3s ease-in-out, transform 0.3s;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px; /* Fixed size for the button */
+    width: 50px;
     height: 50px;
-    border-radius: 50%; /* Circular button */
+    border-radius: 50%;
 }
 
 #theme-toggle:hover {
-    transform: rotate(15deg); /* Rotate on hover */
-    color: var(--accent-color-hover)
+    transform: rotate(15deg);
+    color: var(--accent-color-hover);
 }
 
-/* Hide one of the icons based on the theme */
+/* --- Dark Mode Theme Icons --- */
 .dark-mode #theme-toggle .fa-sun {
     display: none;
 }
@@ -168,7 +220,7 @@ section {
 }
 
 .dark-mode #theme-toggle .fa-moon {
-    display: inline-block; /* Show in dark mode */
+    display: inline-block;
 }
 
 
