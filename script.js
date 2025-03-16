@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Helper Function for Smooth Scrolling ---
     function smoothScroll(target, duration) {
         const targetElement = document.querySelector(target);
-        if (!targetElement) return; // Exit if target element doesn't exist
+        if (!targetElement) return;
 
         const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
         const startPosition = window.scrollY;
@@ -31,11 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("nav a[href^='#']").forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
-            smoothScroll(this.getAttribute("href"), 800); // Smooth scroll duration: 800ms
+            smoothScroll(this.getAttribute("href"), 800);
         });
     });
 
-    // --- Theme Toggle with Local Storage ---
+    // --- Theme Toggle ---
     const themeToggle = document.getElementById("theme-toggle");
     const body = document.body;
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.toggle("dark-mode", theme === "dark-mode");
     }
 
-    // Load saved theme
+    // Load saved theme from local storage
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) applyTheme(savedTheme);
 
@@ -53,17 +53,15 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("theme", newTheme);
     });
 
-    // --- Tab Functionality (For 'About Me' section) ---
+    // --- Tab Functionality (For "About Me" Section) ---
     const tabLinks = document.querySelectorAll(".tab-links");
     const tabContents = document.querySelectorAll(".tab-contents");
 
     tabLinks.forEach(link => {
         link.addEventListener("click", function () {
-            // Remove active classes
             tabLinks.forEach(tabLink => tabLink.classList.remove("active-link"));
             tabContents.forEach(tabContent => tabContent.classList.remove("active-tab"));
 
-            // Add active class to clicked tab and corresponding content
             this.classList.add("active-link");
             document.getElementById(this.dataset.tab)?.classList.add("active-tab");
         });
@@ -72,12 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set "About" tab as active initially
     document.querySelector(".tab-links[data-tab='tab0']")?.click();
 
-    // --- Toggle Service Details (for expanding/collapsing service descriptions) ---
+    // --- Service Details Toggle ---
     document.querySelectorAll(".details-btn").forEach(button => {
         button.addEventListener("click", () => {
             const details = button.nextElementSibling;
             if (details) {
-                details.classList.toggle("show-details");
+                details.style.display = (details.style.display === "none" || details.style.display === "") ? "block" : "none";
+                button.textContent = details.style.display === "block" ? "Hide Details" : "Show Details"; // Toggle button text
             }
         });
     });
