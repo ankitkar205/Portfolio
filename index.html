@@ -15,16 +15,19 @@
 <body>
     <div class="theme-switcher">
         <button id="theme-toggle" aria-label="Toggle Theme">
-            <i class="fas fa-sun"></i> <!-- Sun icon for light mode -->
-            <i class="fas fa-moon"></i> <!-- Moon icon for dark mode -->
+            <i class="fas fa-sun" id="sun-icon"></i> 
+            <i class="fas fa-moon" id="moon-icon"></i> 
         </button>
     </div>
 
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="#home" class="logo"><h2><img width="40" height="40" src="Designer.png">Explore!</h2></a>
-                <ul class="nav-links">
+                <a href="#home" class="logo">
+                    <h2><img width="40" height="40" src="Designer.png"> Explore!</h2>
+                </a>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
