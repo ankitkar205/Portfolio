@@ -3,140 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-pVx4ldHo9RfQNZ0CHZ4GlFlq+GVtIm9+3fwOD29RApOd1g08Q2P+3JFE2UN9pC4tvKl+FElP8GeSVH39Cj3TA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <title>My Portfolio</title>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Particles.js for background effect -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- SMTP.js for email sending -->
+    <meta name="description" content="Portfolio of Ankit Kar, a full-stack developer passionate about AI, embedded systems, and cybersecurity.">
+    <meta name="keywords" content="Ankit Kar, portfolio, web development, full-stack, AI, embedded systems, cybersecurity, Narula Institute of Technology">
+    <meta name="author" content="Ankit Kar">
+    <title>Ankit Kar - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Favicon (optional, but good practice) -->
+    <link rel="icon" href="Designer.png" type="image/x-icon">
 </head>
 <body>
-    <header id="header">
-        <div id="particles-js"></div> <!-- Particles background -->
-        <div class="container">
-            <nav>
-                <img src="Img/logo.png" alt="Logo" class="logo">
-                <ul>
+    <div class="theme-switcher">
+        <button id="theme-toggle" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i> <!-- Sun icon for light mode -->
+            <i class="fas fa-moon"></i> <!-- Moon icon for dark mode -->
+        </button>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#home" class="logo"><h2><img width="40" height="40" src="Designer.png">Explore!</h2></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-            </nav>
-            <div class="header-text">
-                <h1>Hey <span>>Ankit</span> here</h1>
-                <p>Ready to dive in and make things happen</p>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <section id="about">
-        <div class="container">
-            <h2 class="sub-title">About Me</h2>
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="Img/user.png" alt="Profile">
-                </div>
-                <div class="about-col-2">
-                    <div class="tab-titles">
-                        <div class="tab-links active-link" data-tab="tab1">Skills</div>
-                        <div class="tab-links" data-tab="tab2">Education</div>
-                        <div class="tab-links" data-tab="tab3">Experience</div>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1 class="animated-text">Hi there, >Ankit here</h1>
+                <p class="tagline">Full-Stack Developer | AI & Embedded Systems Enthusiast | Cybersecurity Enthusiast</p>
+                <div class="featured-projects">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <img src="project1-image.jpg" alt="Project 1 Title" class="project-image">
+                        <h3 class="project-title">Spoonie</h3>
+                        <p class="project-description">Self Stabilizing Feeding Spoon for Tremored Hands</p>
+                        <a href="https://www.youtube.com/watch?v=Pt1oBkHyFTY" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                     </div>
-                    <div class="tab-contents active-tab" id="tab1">
-                        <ul>
-                            <li><b>Programming Languages:</b> C, C++, HTML, CSS, Python, Java, JavaScript</li><br>
-                            <li><b>Embedded Systems:</b> Arduino, ESP, STM32</li><br>
-                            <li><b>Creative Software:</b> Adobe Photoshop, Lightroom, Premiere Pro</li>
-                        </ul>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <img src="project2-image.jpg" alt="Project 2 Title" class="project-image">
+                        <h3 class="project-title">PlatePal</h3>
+                        <p class="project-description">Helps people to avoid screen distractions while eating.</p>
+                        <a href="https://www.youtube.com/watch?v=7dg8Mj1fkkQ" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                     </div>
-                    <div class="tab-contents" id="tab2">
-                        <b>Bachelor of Technology (BTech)</b><br><br>
-                        <b>Narula Institute of Technology</b><br><br>
-                        Currently pursuing a degree in Electronics and Computer Science.
-                    </div>
-                    <div class="tab-contents" id="tab3">
-                        <p>Currently expanding my project experience in embedded systems and software development.</p>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <img src="project3-image.jpg" alt="Project 3 Title" class="project-image">
+                        <h3 class="project-title">FitPro</h3>
+                        <p class="project-description">Manual health tracker app.</p>
+                        <a href="https://github.com/ankitkar205/FitPro" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="portfolio">
-        <div class="container">
-            <h2 class="sub-title">My Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <a href="https://www.youtube.com/watch?v=Pt1oBkHyFTY" target="_blank">Spoonie</a>
+        <section id="about">
+            <div class="container">
+                <h2 class="sub-title" style="font-size: 40px;">About Me</h2><br>
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="ankit.webp" alt="Profile Picture of Ankit Kar" class="profile-img">
+                    </div>
+                    <div class="about-col-2">
+                        <div class="tab-titles">
+                            <button class="tab-links active-link" data-tab="tab0" aria-label="About Me" style="font-size: 30px;">About</button>
+                            <button class="tab-links" data-tab="tab1" aria-label="My Skills" style="font-size: 30px;">Skills</button>
+                            <button class="tab-links" data-tab="tab2" aria-label="My Education" style="font-size: 30px;">Education</button>
+                            <button class="tab-links" data-tab="tab3" aria-label="My Experience" style="font-size: 30px;">Experience</button>
+                        </div>
+
+                        <div class="tab-contents active-tab" id="tab0">
+                            <p style="font-size: 30px;">I'm <strong>Ankit Kar</strong>, passionate about leveraging technology to solve real-world challenges, I focus on AI, full-stack development, embedded systems, and cybersecurity. With a strong drive for innovation, I strive to apply my skills to create impactful solutions.</p>
+                        </div>
+
+                        <div class="tab-contents" id="tab1">
+                            <ul>
+                                <li><b style="font-size: 20px;">Programming Languages:</b></li> <br>  <!-- Removed list of languages -->
+                                <li class="skill-item">
+                                    <div class="skill-icon-container">
+                                        <i class="fab fa-cuttlefish"></i>  <!-- C Icon -->
+                                        <span class="skill-name">C</span>
+                                    </div>
+                                    <span class="skill-level-text"> (Advanced)</span>
+                                </li>
+                                <li class="skill-item">
+                                     <div class="skill-icon-container">
+                                        <i class="fab fa-cuttlefish"></i>  <!-- C++ Icon (using same as C for now) -->
+                                        <span class="skill-name">C++</span>
+                                    </div>
+                                     <span class="skill-level-text">(Intermediate)</span>
+                                </li>
+                                <li class="skill-item">
+                                    <div class="skill-icon-container">
+                                        <i class="fab fa-python"></i>     <!-- Python Icon -->
+                                        <span class="skill-name">Python</span>
+                                    </div>
+                                    <span class="skill-level-text"> (Beginner)</span>
+                                </li>
+                                <li class="skill-item">
+                                     <div class="skill-icon-container">
+                                        <i class="fab fa-js"></i>         <!-- JavaScript Icon -->
+                                        <span class="skill-name">JavaScript</span>
+                                    </div>
+                                   <span class="skill-level-text">(Beginner)</span>
+                        
+                                </li>
+                                <li class="skill-item">
+                                     <div class="skill-icon-container">
+                                        <i class="fab fa-html5"></i>      <!-- HTML5 Icon -->
+                                        <span class="skill-name">HTML</span>
+                                    </div>
+                                     <span class="skill-level-text">(Expert)</span>
+                                </li>
+                                <li class="skill-item">
+                                     <div class="skill-icon-container">
+                                        <i class="fab fa-css3-alt"></i>   <!-- CSS3 Icon -->
+                                        <span class="skill-name">CSS</span>
+                                    </div>
+                                     <span class="skill-level-text">(Intermediate)</span>
+                                </li>
+                                  <li class="skill-item">
+                                     <div class="skill-icon-container">
+                                        <i class="fab fa-java"></i>   <!-- Java Icon -->
+                                        <span class="skill-name">Java</span>
+                                    </div>
+                                     <span class="skill-level-text">(Intermediate)</span>
+                                </li>
+                                <li><b style="font-size: 20px;">Embedded Systems:</b> Arduino, ESP, STM32</li><br>
+                                <li><b style="font-size: 20px;">Creative Software:</b> Adobe Photoshop, Lightroom, Premiere Pro</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="tab2">
+                            <p><b style="font-size: 25px;">Bachelor of Technology (BTech)</b></p><br>
+                            <p><b style="font-size: 25px;">Narula Institute of Technology</b></p><br>
+                            <p style="font-size: 30px;">Currently pursuing a degree in Electronics and Computer Science.</p>
+                        </div>
+                        <div class="tab-contents" id="tab3">
+                            <p style="font-size: 20px;">Currently expanding my project experience, focusing on practical applications of embedded systems and software development.</p><br>
+                            <ul>
+                                <li style="font-size: 20px;">Involved in EEG signal analysis and assistive technology projects.</li>
+                                <li style="font-size: 20px;">Developed practical applications like an Attendance Tracker and a Citation Generator.</li>
+                                <li style="font-size: 20px;">Contributed to the development of Spoonie, a project featured in IEEE Xplore.</li>
+                                <li style="font-size: 20px;">Gained hands-on experience with Cybersecurity, Robotics, and hardware platforms like Arduino, ESP32 and STM32.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <a href="https://www.youtube.com/watch?v=7dg8Mj1fkkQ&t=1s" target="_blank">PlatePal</a>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+                <h2 style="font-size: 40px;">Portfolio</h2><br>
+                <div class="portfolio-grid">
+                    <!-- Portfolio Item 1 -->
+                    <div class="portfolio-item">
+                        <img src="project1-image.jpg" alt="Portfolio Item 1" class="portfolio-image">
+                        <h3 class="portfolio-title">Spoonie</h3>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10870615" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
+                    </div>
+
+                    <!-- Portfolio Item 2 -->
+                    <div class="portfolio-item">
+                        <img src="project2-image.jpg" alt="Portfolio Item 2" class="portfolio-image">
+                        <h3 class="portfolio-title">PlatePal</h3>
+                        <a href="https://www.youtube.com/watch?v=7dg8Mj1fkkQ" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
+                    </div>
+                    <!-- Portfolio Item 3 -->
+                    <div class="portfolio-item">
+                        <img src="project3-image.jpg" alt="Portfolio Item 3" class="portfolio-image">
+                        <h3 class="portfolio-title">FitPro</h3>
+                        <a href="https://github.com/ankitkar205/FitPro" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
+                    </div>
+                    <!-- Portfolio Item 4 -->
+                    <div class="portfolio-item">
+                        <img src="project4-image.jpg" alt="Portfolio Item 4" class="portfolio-image">
+                        <h3 class="portfolio-title">Hand Gesture Mouse</h3>
+                        <a href="https://github.com/ankitkar205/Gesture_Mouse" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
+                    </div>
+                    <!-- Portfolio Item 5 -->
+                    <div class="portfolio-item">
+                        <img src="project5-image.png" alt="Portfolio Item 5" class="portfolio-image">
+                        <h3 class="portfolio-title">Home Storage Management System</h3>
+                        <a href="https://github.com/ankitkar205/HomeStore" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
+                    </div>
+                    <!-- Portfolio Item 6 -->
+                    <div class="portfolio-item">
+                        <img src="projectc-image.jpg" alt="Portfolio Item 6" class="portfolio-image">
+                        <h3 class="portfolio-title">Coming Soon!</h3>
+                        <a href="project6-url" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
+                    </div>
                 </div>
-                <div class="portfolio-item">Project 3</div>
-                <div class="portfolio-item">Project 4</div>
-                <div class="portfolio-item">Project 5</div>
             </div>
-        </div>
-    </section>
-    
-    <section id="services">
-        <div class="container">
-            <h2 class="sub-title">Services</h2>
-            <div class="services-grid">
-                <div class="service-item">Consulting</div>
-                <div class="service-item">Software Development</div>
-                <div class="service-item">Embedded Systems</div>
-                <div class="service-item">Technical Support</div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title" style="font-size: 40px;">My Services</h2><br>
+                <div class="services-grid">
+                    
+                    <!-- PPT Making Service -->
+                    <div class="service-card">
+                        <i class="fas fa-file-powerpoint service-icon"></i>
+                        <h3 class="service-title">PPT Creation</h3>
+                        <p class="service-description">
+                            Visually appealing and well-structured presentations designed for impact and clarity.
+                        </p>
+                        <button class="details-btn" aria-label="Show PPT Making Details">Details</button>
+                        <div class="service-details" style="display: none;">
+                            <p class="service-details-content">
+                                Get customized, professional, and engaging presentations with modern design aesthetics.
+                            </p>
+                        </div>
+                    </div>
+        
+                    <!-- Tech Consulting Service -->
+                    <div class="service-card">
+                        <i class="fas fa-lightbulb service-icon"></i>
+                        <h3 class="service-title">Tech Consulting</h3>
+                        <p class="service-description">
+                            Expert guidance on the latest technologies, software solutions, and project strategies.
+                        </p>
+                        <button class="details-btn" aria-label="Show Tech Consulting Details">Details</button>
+                        <div class="service-details" style="display: none;">
+                            <p class="service-details-content">
+                                Gain insights on emerging tech trends, system optimization, and tailored tech solutions.
+                            </p>
+                        </div>
+                    </div>
+        
+                    <!-- Cyber Crime Protection Service -->
+                    <div class="service-card">
+                        <i class="fas fa-user-shield service-icon"></i>
+                        <h3 class="service-title">Cyber Crime Protection</h3>
+                        <p class="service-description">
+                            Essential tips and expert advice to help safeguard your online presence from threats.
+                        </p>
+                        <button class="details-btn" aria-label="Show Cyber Crime Protection Details">Details</button>
+                        <div class="service-details" style="display: none;">
+                            <p class="service-details-content">
+                                Learn how to protect your data, avoid scams, enhance your digital security and stay safe.
+                            </p>
+                        </div>
+                    </div>
+        
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
 
-    <section id="contact">
+        <section id="contact">
+            <h2 class="contact-title" style="font-size: 40px;">Let's Connect</h2><br>
+            <p class="contact-subtitle" style="font-size: 20px;">Reach out to me on any of these platforms.</p>
+            <ul class="contact-list">
+                <li>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ankitkar205@gmail.com" target="_blank" class="contact-link" aria-label="Email">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        ankitkar205@gmail.com
+                        </a>
+
+                    
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/ankit-kar-690a55304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="contact-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin contact-icon"></i>
+                        LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/ankitkar205" target="_blank" class="contact-link" aria-label="GitHub">
+                        <i class="fab fa-github contact-icon"></i>
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/it5_shine?utm_source=qr&igsh=Y2llNjZpZmZtY3Jt" target="_blank" class="contact-link" aria-label="Instagram">
+                        <i class="fab fa-instagram contact-icon"></i>
+                        Instagram
+                    </a>
+                </li>
+            </ul>
+        </section>
+        
+        
+    </main>
+
+    <footer>
         <div class="container">
-            <h2 class="sub-title">Contact Me</h2>
-            <form id="contactForm">
-                <input type="text" placeholder="Your Name" id="name" required>
-                <input type="email" placeholder="Your Email" id="email" required>
-                <textarea placeholder="Your Message" rows="4" id="message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <p style="font-size: 10px;">© 2025 Ankit Kar. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        // Initialize EmailJS with your User ID
-        (function() {
-            emailjs.init("f7_ND6PMR2_fs8WCV"); // Replace with your EmailJS User ID
-        })();
-
-        // Contact form submission handling
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent default form submission
-
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
-
-            // Email parameters
-            const emailParams = {
-                from_name: name,
-                from_email: email,
-                message: message
-            };
-
-            // Send the email
-            emailjs.send("service_jz2n7ce", "template_crxku7i", emailParams)
-                .then((response) => {
-                    alert("Email sent successfully!");
-                    document.getElementById("contactForm").reset(); // Reset form after sending
-                })
-                .catch((error) => {
-                    alert("Error sending email: " + error);
-                });
-        });
-    </script>
 </body>
 </html>
