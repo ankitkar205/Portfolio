@@ -1,313 +1,347 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Ankit Kar, a full-stack developer passionate about AI, embedded systems, and cybersecurity.">
-    <meta name="keywords" content="Ankit Kar, portfolio, web development, full-stack, AI, embedded systems, cybersecurity, Narula Institute of Technology">
-    <meta name="author" content="Ankit Kar">
-    <title>Ankit Kar - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Favicon (optional, but good practice) -->
-    <link rel="icon" href="Designer.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rik - Engineering Student & Developer</title>
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Devicon Icon Library -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/devicon@latest/devicon.min.css" />
 </head>
 <body>
-    <div class="theme-switcher">
-        <button id="theme-toggle" aria-label="Toggle Theme">
-            <i class="fas fa-sun" id="sun-icon"></i> 
-            <i class="fas fa-moon" id="moon-icon"></i> 
-        </button>
+
+  <!-- Animated Background -->
+  <div class="background-animation"></div>
+
+  <!-- Header / Top Navigation -->
+  <header class="top-nav">
+    <nav class="navbar">
+      <button class="navbar-link active" data-nav-link="about">About</button>
+      <button class="navbar-link" data-nav-link="resume">Resume</button>
+      <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
+      <button class="navbar-link" data-nav-link="contact">Contact</button>
+    </nav>
+  </header>
+
+  <!-- Left Profile Tile -->
+  <aside class="profile-tile">
+    <div class="profile-card">
+      <figure class="avatar-box">
+        <img src="profile.jpeg" alt="Rik">
+      </figure>
+      <h1 class="name">Ankit Kar</h1>
+      <p class="title">Engineering Student | Researcher | Developer | Cyber Security Enthusiast</p>
+      
+      <div class="separator"></div>
+      
+      <ul class="contact-list">
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+          <a href="mailto:ankitkar205@gmail.com" class="contact-link">ankitkar205@gmail.com</a>
+        </li>
+      </ul>
+      
+      <div class="social-list">
+        <a href="https://www.instagram.com/it5_shine?igsh=Y2llNjZpZmZtY3Jt" class="social-link" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://www.linkedin.com/in/ankit-kar-690a55304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="https://github.com/ankitkar205" class="social-link" title="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+      </div>
     </div>
+  </aside>
 
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="#home" class="logo">
-                    <h2><img width="40" height="40" src="Designer.png"> Explore!</h2>
-                </a>
-                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- ABOUT PAGE -->
+    <article class="page active" data-page="about">
+      <header><h2 class="h2 article-title">About Me</h2></header>
+      <section class="about-content">
+        <div class="about-text">
+            <p>Hello! I’m Ankit Kar — an engineering student, researcher, and developer dedicated to solving real-world challenges through innovation and technology. I specialize in integrating hands-on engineering principles with modern software development, embedded systems, and cyber security practices to deliver efficient, impactful solutions.</p>
+            <p>Beyond my academic and professional work, I actively explore emerging technologies, conduct research, and develop prototypes that push the boundaries of practical application. My experience spans IoT, automation, biotech, and secure software design, ensuring solutions are not only functional but also resilient against modern security threats.</p> 
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h1 class="animated-text">Hi there, >Ankit here</h1>
-                <p class="tagline">Full-Stack Developer | AI & Embedded Systems Enthusiast | Cybersecurity Enthusiast</p>
-                <div class="featured-projects">
-                    <!-- Project 1 -->
-                    <div class="project-card">
-                        <img src="project1-image.jpg" alt="Project 1 Title" class="project-image">
-                        <h3 class="project-title">Spoonie</h3>
-                        <p class="project-description">Self Stabilizing Feeding Spoon for Tremored Hands</p>
-                        <a href="https://www.youtube.com/watch?v=Pt1oBkHyFTY" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card">
-                        <img src="project2-image.jpg" alt="Project 2 Title" class="project-image">
-                        <h3 class="project-title">PlatePal</h3>
-                        <p class="project-description">Helps people to avoid screen distractions while eating.</p>
-                        <a href="https://www.youtube.com/watch?v=7dg8Mj1fkkQ" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card">
-                        <img src="project3-image.jpg" alt="Project 3 Title" class="project-image">
-                        <h3 class="project-title">FitPro</h3>
-                        <p class="project-description">Manual health tracker app.</p>
-                        <a href="https://github.com/ankitkar205/FitPro" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2 class="sub-title" style="font-size: 40px;">About Me</h2><br>
-                <div class="row">
-                    <div class="about-col-1">
-                        <img src="ankit.webp" alt="Profile Picture of Ankit Kar" class="profile-img">
-                    </div>
-                    <div class="about-col-2">
-                        <div class="tab-titles">
-                            <button class="tab-links active-link" data-tab="tab0" aria-label="About Me" style="font-size: 30px;">About</button>
-                            <button class="tab-links" data-tab="tab1" aria-label="My Skills" style="font-size: 30px;">Skills</button>
-                            <button class="tab-links" data-tab="tab2" aria-label="My Education" style="font-size: 30px;">Education</button>
-                            <button class="tab-links" data-tab="tab3" aria-label="My Experience" style="font-size: 30px;">Experience</button>
-                        </div>
-
-                        <div class="tab-contents active-tab" id="tab0">
-                            <p style="font-size: 30px;">I'm <strong>Ankit Kar</strong>, passionate about leveraging technology to solve real-world challenges, I focus on AI, full-stack development, embedded systems, and cybersecurity. With a strong drive for innovation, I strive to apply my skills to create impactful solutions.</p>
-                        </div>
-
-                        <div class="tab-contents" id="tab1">
-                            <ul>
-                                <li><b style="font-size: 20px;">Programming Languages:</b></li> <br>  <!-- Removed list of languages -->
-                                <li class="skill-item">
-                                    <div class="skill-icon-container">
-                                        <i class="fab fa-cuttlefish"></i>  <!-- C Icon -->
-                                        <span class="skill-name">C</span>
-                                    </div>
-                                    <span class="skill-level-text"> (Advanced)</span>
-                                </li>
-                                <li class="skill-item">
-                                     <div class="skill-icon-container">
-                                        <i class="fab fa-cuttlefish"></i>  <!-- C++ Icon (using same as C for now) -->
-                                        <span class="skill-name">C++</span>
-                                    </div>
-                                     <span class="skill-level-text">(Intermediate)</span>
-                                </li>
-                                <li class="skill-item">
-                                    <div class="skill-icon-container">
-                                        <i class="fab fa-python"></i>     <!-- Python Icon -->
-                                        <span class="skill-name">Python</span>
-                                    </div>
-                                    <span class="skill-level-text"> (Beginner)</span>
-                                </li>
-                                <li class="skill-item">
-                                     <div class="skill-icon-container">
-                                        <i class="fab fa-js"></i>         <!-- JavaScript Icon -->
-                                        <span class="skill-name">JavaScript</span>
-                                    </div>
-                                   <span class="skill-level-text">(Beginner)</span>
-                        
-                                </li>
-                                <li class="skill-item">
-                                     <div class="skill-icon-container">
-                                        <i class="fab fa-html5"></i>      <!-- HTML5 Icon -->
-                                        <span class="skill-name">HTML</span>
-                                    </div>
-                                     <span class="skill-level-text">(Expert)</span>
-                                </li>
-                                <li class="skill-item">
-                                     <div class="skill-icon-container">
-                                        <i class="fab fa-css3-alt"></i>   <!-- CSS3 Icon -->
-                                        <span class="skill-name">CSS</span>
-                                    </div>
-                                     <span class="skill-level-text">(Intermediate)</span>
-                                </li>
-                                  <li class="skill-item">
-                                     <div class="skill-icon-container">
-                                        <i class="fab fa-java"></i>   <!-- Java Icon -->
-                                        <span class="skill-name">Java</span>
-                                    </div>
-                                     <span class="skill-level-text">(Intermediate)</span>
-                                </li>
-                                <li><b style="font-size: 20px;">Embedded Systems:</b> Arduino, ESP, STM32</li><br>
-                                <li><b style="font-size: 20px;">Creative Software:</b> Adobe Photoshop, Lightroom, Premiere Pro</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="tab2">
-                            <p><b style="font-size: 25px;">Bachelor of Technology (BTech)</b></p><br>
-                            <p><b style="font-size: 25px;">Narula Institute of Technology</b></p><br>
-                            <p style="font-size: 30px;">Currently pursuing a degree in Electronics and Computer Science.</p>
-                        </div>
-                        <div class="tab-contents" id="tab3">
-                            <p style="font-size: 20px;">Currently expanding my project experience, focusing on practical applications of embedded systems and software development.</p><br>
-                            <ul>
-                                <li style="font-size: 20px;">Involved in EEG signal analysis and assistive technology projects.</li>
-                                <li style="font-size: 20px;">Developed practical applications like an Attendance Tracker and a Citation Generator.</li>
-                                <li style="font-size: 20px;">Contributed to the development of Spoonie, a project featured in IEEE Xplore.</li>
-                                <li style="font-size: 20px;">Gained hands-on experience with Cybersecurity, Robotics, and hardware platforms like Arduino, ESP32 and STM32.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <div class="container">
-                <h2 style="font-size: 40px;">Portfolio</h2><br>
-                <div class="portfolio-grid">
-                    <!-- Portfolio Item 1 -->
-                    <div class="portfolio-item">
-                        <img src="project1-image.jpg" alt="Portfolio Item 1" class="portfolio-image">
-                        <h3 class="portfolio-title">Spoonie</h3>
-                        <a href="https://ieeexplore.ieee.org/abstract/document/10870615" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
-                    </div>
-
-                    <!-- Portfolio Item 2 -->
-                    <div class="portfolio-item">
-                        <img src="project2-image.jpg" alt="Portfolio Item 2" class="portfolio-image">
-                        <h3 class="portfolio-title">PlatePal</h3>
-                        <a href="https://www.youtube.com/watch?v=7dg8Mj1fkkQ" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
-                    </div>
-                    <!-- Portfolio Item 3 -->
-                    <div class="portfolio-item">
-                        <img src="project3-image.jpg" alt="Portfolio Item 3" class="portfolio-image">
-                        <h3 class="portfolio-title">FitPro</h3>
-                        <a href="https://github.com/ankitkar205/FitPro" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
-                    </div>
-                    <!-- Portfolio Item 4 -->
-                    <div class="portfolio-item">
-                        <img src="project4-image.jpg" alt="Portfolio Item 4" class="portfolio-image">
-                        <h3 class="portfolio-title">Hand Gesture Mouse</h3>
-                        <a href="https://github.com/ankitkar205/Gesture_Mouse" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
-                    </div>
-                    <!-- Portfolio Item 5 -->
-                    <div class="portfolio-item">
-                        <img src="project5-image.png" alt="Portfolio Item 5" class="portfolio-image">
-                        <h3 class="portfolio-title">Home Storage Management System</h3>
-                        <a href="https://github.com/ankitkar205/HomeStore" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
-                    </div>
-                    <!-- Portfolio Item 6 -->
-                    <div class="portfolio-item">
-                        <img src="projectc-image.jpg" alt="Portfolio Item 6" class="portfolio-image">
-                        <h3 class="portfolio-title">Coming Soon!</h3>
-                        <a href="project6-url" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services">
-            <div class="container">
-                <h2 class="section-title" style="font-size: 40px;">My Services</h2><br>
-                <div class="services-grid">
-                    
-                    <!-- PPT Making Service -->
-                    <div class="service-card">
-                        <i class="fas fa-file-powerpoint service-icon"></i>
-                        <h3 class="service-title">PPT Creation</h3>
-                        <p class="service-description">
-                            Visually appealing and well-structured presentations designed for impact and clarity.
-                        </p>
-                        <button class="details-btn" aria-label="Show PPT Making Details">Details</button>
-                        <div class="service-details" style="display: none;">
-                            <p class="service-details-content">
-                                Get customized, professional, and engaging presentations with modern design aesthetics.
-                            </p>
-                        </div>
-                    </div>
-        
-                    <!-- Tech Consulting Service -->
-                    <div class="service-card">
-                        <i class="fas fa-lightbulb service-icon"></i>
-                        <h3 class="service-title">Tech Consulting</h3>
-                        <p class="service-description">
-                            Expert guidance on the latest technologies, software solutions, and project strategies.
-                        </p>
-                        <button class="details-btn" aria-label="Show Tech Consulting Details">Details</button>
-                        <div class="service-details" style="display: none;">
-                            <p class="service-details-content">
-                                Gain insights on emerging tech trends, system optimization, and tailored tech solutions.
-                            </p>
-                        </div>
-                    </div>
-        
-                    <!-- Cyber Crime Protection Service -->
-                    <div class="service-card">
-                        <i class="fas fa-user-shield service-icon"></i>
-                        <h3 class="service-title">Cyber Crime Protection</h3>
-                        <p class="service-description">
-                            Essential tips and expert advice to help safeguard your online presence from threats.
-                        </p>
-                        <button class="details-btn" aria-label="Show Cyber Crime Protection Details">Details</button>
-                        <div class="service-details" style="display: none;">
-                            <p class="service-details-content">
-                                Learn how to protect your data, avoid scams, enhance your digital security and stay safe.
-                            </p>
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-        </section>
-        
-
-        <section id="contact">
-            <h2 class="contact-title" style="font-size: 40px;">Let's Connect</h2><br>
-            <p class="contact-subtitle" style="font-size: 20px;">Reach out to me on any of these platforms.</p>
-            <ul class="contact-list">
-                <li>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ankitkar205@gmail.com" target="_blank" class="contact-link" aria-label="Email">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        ankitkar205@gmail.com
-                        </a>
-
-                    
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/ankit-kar-690a55304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="contact-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin contact-icon"></i>
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/ankitkar205" target="_blank" class="contact-link" aria-label="GitHub">
-                        <i class="fab fa-github contact-icon"></i>
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/it5_shine?utm_source=qr&igsh=Y2llNjZpZmZtY3Jt" target="_blank" class="contact-link" aria-label="Instagram">
-                        <i class="fab fa-instagram contact-icon"></i>
-                        Instagram
-                    </a>
-                </li>
-            </ul>
-        </section>
-        
-        
-    </main>
-
-    <footer>
-        <div class="container">
-            <p style="font-size: 10px;">© 2025 Ankit Kar. All rights reserved.</p>
         </div>
-    </footer>
+        <div class="what-i-do">
+  <h3 class="h3 section-title">What I Do</h3>
+  <ul class="service-list">
 
-    <script src="script.js"></script>
+    <li class="service-item">
+      <div class="service-icon"><ion-icon name="construct-outline"></ion-icon></div>
+      <div class="service-info">
+        <h4 class="h4">Engineering & Technical Solutions</h4>
+        <p>Designing and developing efficient systems, from mechanical prototypes to embedded and IoT-based solutions.</p>
+      </div>
+    </li>
+
+    <li class="service-item">
+      <div class="service-icon"><ion-icon name="analytics-outline"></ion-icon></div>
+      <div class="service-info">
+        <h4 class="h4">Research & Project Support</h4>
+        <p>Assisting in academic and technical projects, including idea validation, research work, and innovative problem-solving.</p>
+      </div>
+    </li>
+
+    <li class="service-item">
+      <div class="service-icon"><ion-icon name="code-slash-outline"></ion-icon></div>
+      <div class="service-info">
+        <h4 class="h4">Software & Web Development</h4>
+        <p>Building modern websites, mobile apps, and automation tools with clean, maintainable code.</p>
+      </div>
+    </li>
+
+    <li class="service-item">
+      <div class="service-icon"><ion-icon name="color-palette-outline"></ion-icon></div>
+      <div class="service-info">
+        <h4 class="h4">UI/UX & Presentation Design</h4>
+        <p>Designing user-friendly digital interfaces and creating professional PowerPoint presentations for impactful communication.</p>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+      </section>
+    </article>
+
+    <!-- RESUME PAGE -->
+    <article class="page" data-page="resume">
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+          <a href="Rik_CV.pdf" class="btn" download>Download CV</a>
+        </header>
+        
+        <section class="timeline">
+  <h3 class="h3 section-title">Experience</h3>
+  <ul class="timeline-list">
+    
+    <li class="timeline-item">
+      <h4 class="h4">Research Intern</h4>
+      <span>2023 — Present</span>
+      <p>Working on applied engineering research projects involving automation, data processing, biotech solutions, and EEG signal analysis.</p>
+    </li>
+
+    <li class="timeline-item">
+      <h4 class="h4">Software Developer</h4>
+      <span>2024 — Present</span>
+      <p>Developing custom websites, mobile apps, and software solutions for problem-solving and academic projects.</p>
+    </li>
+
+    <li class="timeline-item">
+      <h4 class="h4">Embedded Systems & IoT Developer</h4>
+      <span>2023 — Present</span>
+      <p>Designed and implemented IoT and automation systems using microcontrollers, sensors, and networked devices. Built innovative solutions such as <strong>Spoonie</strong> and <strong>PlatePal</strong> for assistive technology applications.</p>
+    </li>
+
+    <li class="timeline-item">
+      <h4 class="h4">Biotech & EEG Projects</h4>
+      <span>2024 — Present</span>
+      <p>Worked on biotech-driven engineering solutions, integrating EEG-based signal processing for research in human-computer interaction and biomedical applications.</p>
+    </li>
+
+    <li class="timeline-item">
+      <h4 class="h4">Cyber Security & Linux Enthusiast</h4>
+      <span>2023 — Present</span>
+      <p>Completed cyber security projects involving penetration testing, vulnerability assessment, and secure network configurations. Skilled in using Linux-based systems and security tools for ethical hacking and system hardening.</p>
+    </li>
+
+  </ul>
+</section>
+
+        
+        <section class="skills">
+          <h3 class="h3 section-title">My Skills</h3>
+          <div class="skill-category">
+            <h4>Programming & Web</h4>
+            <ul class="skills-list">
+              <li class="skill-item"><i class="devicon-c-plain colored"></i><span>C</span></li>
+              <li class="skill-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></li>
+              <li class="skill-item"><i class="devicon-java-plain colored"></i><span>Java</span></li>
+              <li class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></li>
+              <li class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML</span></li>
+              <li class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS</span></li>
+              <li class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></li>
+              <li class="skill-item"><i class="devicon-react-original colored"></i><span>React</span></li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>Software & Tools</h4>
+            <ul class="skills-list">
+              <li class="skill-item"><i class="devicon-photoshop-plain colored"></i><span>Photoshop</span></li>
+              <li class="skill-item"><i class="devicon-premierepro-plain colored"></i><span>Premiere Pro</span></li>
+              <li class="skill-item"><i class="devicon-lightroom-plain colored"></i><span>Lightroom</span></li>
+              <li class="skill-item"><i class="devicon-androidstudio-plain colored"></i><span>Android Studio</span></li>
+              <li class="skill-item"><i class="devicon-linux-plain colored"></i><span>Linux</span></li>
+              <li class="skill-item"><ion-icon name="git-branch-outline"></ion-icon><span>Git</span></li>
+            </ul>
+          </div>
+        </section>
+    </article>
+      
+    <!-- PORTFOLIO PAGE -->
+    <!-- PORTFOLIO PAGE -->
+<article class="page" data-page="portfolio">
+    <header><h2 class="h2 article-title">Portfolio</h2></header>
+    <section class="project-list">
+        
+        <!-- Video Project 1 -->
+        <a href="https://www.youtube.com/watch?v=7dg8Mj1fkkQ" target="_blank" class="project-link">
+            <div class="project-card">
+                <figure class="project-image">
+                    <img src="project2-image.jpg" alt="Video Project Showcase">
+                </figure>
+                <div class="project-info">
+                    <h3 class="h3">PlaatePal</h3>
+                    <p>Smart dining companion for healthy eating</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Video Project 2 -->
+        <a href="https://www.youtube.com/watch?v=Pt1oBkHyFTY" target="_blank" class="project-link">
+            <div class="project-card">
+                <figure class="project-image">
+                    <img src="project1-image.jpg" alt="Creative Video Edit">
+                </figure>
+                <div class="project-info">
+                    <h3 class="h3">Spoonie</h3>
+                    <p>Self stabilizing feeding spoon for tremored hands</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Task Progression Tracker -->
+        <a href="https://github.com/ankitkar205/Task-Progression-Tracker" target="_blank" class="project-link">
+            <div class="project-card">
+                <figure class="project-image">
+                    <img src="https://raw.githubusercontent.com/ankitkar205/Task-Progression-Tracker/refs/heads/main/7.jpg" alt="Task Progression Tracker">
+                </figure>
+                <div class="project-info">
+                    <h3 class="h3">Task & Progression Tracker</h3>
+                    <p>Android Application</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Text Encryption Tool -->
+        <a href="https://github.com/ankitkar205/Text-Encryption-Tool-" target="_blank" class="project-link">
+            <div class="project-card">
+                <figure class="project-image">
+                    <img src="https://raw.githubusercontent.com/ankitkar205/Text-Encryption-Tool-/refs/heads/main/a.png" alt="Text Encryption Tool">
+                </figure>
+                <div class="project-info">
+                    <h3 class="h3">Text Encryption Tool</h3>
+                    <p>Security & Cryptography</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Password Analyzer -->
+        <a href="https://github.com/ankitkar205/Password-Analyzer" target="_blank" class="project-link">
+            <div class="project-card">
+                <figure class="project-image">
+                    <img src="https://raw.githubusercontent.com/ankitkar205/Password-Analyzer/refs/heads/main/a.png" alt="Password Analyzer">
+                </figure>
+                <div class="project-info">
+                    <h3 class="h3">Password Analyzer</h3>
+                    <p>Security Analysis</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- FitPro -->
+        <a href="https://github.com/ankitkar205/FitPro" target="_blank" class="project-link">
+            <div class="project-card">
+                <figure class="project-image">
+                    <img src="https://camo.githubusercontent.com/8042612d574ba79294cc83dae11bbe93734de32198fa9fb12602977dcc7c4228/68747470733a2f2f6d69722d73332d63646e2d63662e626568616e63652e6e65742f70726f6a6563745f6d6f64756c65732f66732f32313866633837323733353833312e356266316534353939396334302e676966" alt="FitPro">
+                </figure>
+                <div class="project-info">
+                    <h3 class="h3">FitPro</h3>
+                    <p>Fitness Application</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Gesture Mouse -->
+        <a href="https://github.com/ankitkar205/Gesture_Mouse" target="_blank" class="project-link">
+            <div class="project-card">
+                <figure class="project-image">
+                    <img src="project4-image.jpg" alt="Gesture Mouse">
+                </figure>
+                <div class="project-info">
+                    <h3 class="h3">Gesture Mouse</h3>
+                    <p>Python & Computer Vision</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- MyPythonAI -->
+        <a href="https://github.com/ankitkar205/MyPythonAI" target="_blank" class="project-link">
+            <div class="project-card">
+                <figure class="project-image">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E12AQEwOfjTdMaBrg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1723667508065?e=2147483647&v=beta&t=tvyoiqUUiFMZF5miGaZVR7n76zTsbE7CvbFmMRkCjFY" alt="MyPythonAI">
+                </figure>
+                <div class="project-info">
+                    <h3 class="h3">MyPythonAI</h3>
+                    <p>Artificial Intelligence</p>
+                </div>
+            </div>
+        </a>
+
+    </section>
+</article>
+
+    <!-- CONTACT PAGE -->
+    <article class="page" data-page="contact">
+        <header><h2 class="h2 article-title">Get in Touch</h2></header>
+        <section class="contact-area">
+          <p class="contact-intro">I’m always open to new collaborations, exciting research, or freelance projects. Let’s build something amazing together.</p>
+          <ul class="contact-platform-list">
+            <li class="contact-platform-item">
+              <a href="mailto:ankitkar205@gmail.com" class="platform-card">
+                <div class="platform-icon"><ion-icon name="mail-outline"></ion-icon></div>
+                <div class="platform-info"><h4 class="h4">Email</h4><span>Send a Message</span></div>
+                <ion-icon name="arrow-forward-outline" class="arrow-icon"></ion-icon>
+              </a>
+            </li>
+            <li class="contact-platform-item">
+              <a href="https://discordapp.com/users/955191077273485342" class="platform-card">
+                <div class="platform-icon discord"><ion-icon name="logo-discord"></ion-icon></div>
+                <div class="platform-info"><h4 class="h4">Discord</h4><span>@yourusername</span></div>
+                <ion-icon name="arrow-forward-outline" class="arrow-icon"></ion-icon>
+              </a>
+            </li>
+            <li class="contact-platform-item">
+              <a href="https://www.linkedin.com/in/ankit-kar-690a55304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="platform-card">
+                <div class="platform-icon linkedin"><ion-icon name="logo-linkedin"></ion-icon></div>
+                <div class="platform-info"><h4 class="h4">LinkedIn</h4><span>Connect with Me</span></div>
+                <ion-icon name="arrow-forward-outline" class="arrow-icon"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </section>
+    </article>
+
+  </main>
+  
+  <button class="theme-btn" data-theme-btn title="Toggle Theme">
+    <ion-icon name="sunny-outline" class="sun"></ion-icon>
+    <ion-icon name="moon-outline" class="moon"></ion-icon>
+  </button>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  <!-- JS -->
+  <script src="script.js"></script>
+
 </body>
 </html>
