@@ -1,91 +1,87 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // --- Helper Function for Smooth Scrolling ---
-    function smoothScroll(target, duration) {
-        const targetElement = document.querySelector(target);
-        if (!targetElement) return;
+'use strict';
 
-        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-        const startPosition = window.scrollY;
-        const distance = targetPosition - startPosition;
-        let startTime = null;
+/**
+ * This script handles all interactive functionality for the portfolio website:
+ * 1. Page Navigation: Switches between About, Resume, Portfolio, and Contact pages.
+ * 2. Theme Toggling: Switches between light and dark themes.
+ * 3. Animated Background: Creates a radial gradient that follows the mouse cursor.
+ */
 
-        function animation(currentTime) {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-            if (timeElapsed < duration) requestAnimationFrame(animation);
-        }
+// -------------------------------------------------------------------
+// 1. PAGE NAVIGATION
+// -------------------------------------------------------------------
 
-        function easeInOutQuad(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return (c / 2) * t * t + b;
-            t--;
-            return (-c / 2) * (t * (t - 2) - 1) + b;
-        }
+// Select all navigation links and all the pages
+const navLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
 
-        requestAnimationFrame(animation);
+// Add a click event listener to each navigation link
+navLinks.forEach(link => {
+  link.addEventListener("click", function () {
+
+    // Get the name of the page to navigate to from the link's `data-nav-link` attribute
+    const pageName = this.dataset.navLink;
+
+    // First, remove the 'active' class from all navigation links and pages
+    navLinks.forEach(navLink => navLink.classList.remove("active"));
+    pages.forEach(page => page.classList.remove("active"));
+
+    // Then, add the 'active' class to the link that was clicked
+    this.classList.add("active");
+
+    // Find the corresponding page using its `data-page` attribute and add the 'active' class to show it
+    const targetPage = document.querySelector(`[data-page="${pageName}"]`);
+    if (targetPage) {
+      targetPage.classList.add("active");
     }
 
-    // --- Smooth Scrolling for Navigation Links ---
-    document.querySelectorAll("nav a[href^='#']").forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            smoothScroll(this.getAttribute("href"), 800);
-        });
-    });
+    // Scroll the window to the top for a smooth page transition effect
+    window.scrollTo(0, 0);
 
-    // --- Theme Toggle ---
-    const themeToggle = document.getElementById("theme-toggle");
-    const body = document.body;
+  });
+});
 
-    function applyTheme(theme) {
-        body.classList.toggle("dark-mode", theme === "dark-mode");
-    }
+// -------------------------------------------------------------------
+// 2. THEME TOGGLING
+// -------------------------------------------------------------------
 
-    // Load saved theme from local storage
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) applyTheme(savedTheme);
+// Select the theme toggle button
+const themeBtn = document.querySelector("[data-theme-btn]");
 
-    themeToggle?.addEventListener("click", () => {
-        const newTheme = body.classList.contains("dark-mode") ? "" : "dark-mode";
-        applyTheme(newTheme);
-        localStorage.setItem("theme", newTheme);
-    });
+// Add a click event listener to the theme button
+themeBtn.addEventListener("click", function () {
+  
+  // Get the current theme from the `data-theme` attribute on the <html> element
+  const currentTheme = document.documentElement.dataset.theme || "dark";
+  
+  // Determine the new theme by toggling the current one
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  
+  // Set the `data-theme` attribute on the <html> element to the new theme
+  // The CSS will automatically apply the new styles.
+  document.documentElement.setAttribute("data-theme", newTheme);
 
-    // --- Tab Functionality (For "About Me" Section) ---
-    const tabLinks = document.querySelectorAll(".tab-links");
-    const tabContents = document.querySelectorAll(".tab-contents");
+});
 
-    tabLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            tabLinks.forEach(tabLink => tabLink.classList.remove("active-link"));
-            tabContents.forEach(tabContent => tabContent.classList.remove("active-tab"));
+// -------------------------------------------------------------------
+// 3. ANIMATED BACKGROUND EFFECT
+// -------------------------------------------------------------------
 
-            this.classList.add("active-link");
-            document.getElementById(this.dataset.tab)?.classList.add("active-tab");
-        });
-    });
+// Select the background element
+const background = document.querySelector(".background-animation");
 
-    // Set "About" tab as active initially
-    document.querySelector(".tab-links[data-tab='tab0']")?.click();
+// Add a 'mousemove' event listener to the entire window
+window.addEventListener("mousemove", function (event) {
+  
+  // Calculate the mouse's X and Y position as a percentage of the window's total width and height
+  const xPosition = (event.clientX / window.innerWidth) * 100;
+  const yPosition = (event.clientY / window.innerHeight) * 100;
+  
+  // Update the CSS custom properties '--x' and '--y' on the background element.
+  // The CSS uses these variables to position the radial gradient in real-time.
+  if (background) {
+    background.style.setProperty("--x", `${xPosition}%`);
+    background.style.setProperty("--y", `${yPosition}%`);
+  }
 
-    // --- Service Details Toggle ---
-    document.querySelectorAll(".details-btn").forEach(button => {
-        button.addEventListener("click", () => {
-            const details = button.nextElementSibling;
-            if (details) {
-                details.style.display = (details.style.display === "none" || details.style.display === "") ? "block" : "none";
-                button.textContent = details.style.display === "block" ? "Hide Details" : "Show Details"; // Toggle button text
-            }
-        });
-    });
-
-    // --- Mobile Menu Toggle ---
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    menuToggle?.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
 });
